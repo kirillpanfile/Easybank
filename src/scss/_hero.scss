@@ -1,0 +1,111 @@
+.hero {
+    background: url('@img/images/bg-intro-desktop.svg');
+    @include adaptiveValue("background-position-x", 960, 60);
+    background-position-y: -160px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: $LightBlue;
+
+    @media (max-width:$tablet) {
+        background-position-y: -60px;
+    }
+}
+
+.hero-content {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    text-align: left;
+    align-items: center;
+
+
+    @media (max-width:$tablet) {
+        text-align: center;
+        display: block;
+    }
+
+    // .hero-content__image
+
+    &__image {
+        transform: translate(100px, 150px);
+        @include adaptiveValue("width", 900, 200);
+        position: relative;
+
+        @media (max-width:$tablet) {
+            transform: translate(0, -10px);
+            display: block;
+            width: 80%;
+            margin: 0 auto;
+        }
+    }
+
+    // .hero-content__text
+
+    &__text {
+        width: 40%;
+
+        @media (max-width:$tablet) {
+            width: 100%;
+        }
+
+        align-items: flex-start;
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.hero-text {
+    @include adaptiveValue("padding-left", 160, 10);
+    // .hero-text__title
+
+    &__title {
+        color: $mainColor;
+        font-size: rem(48);
+        line-height: math.div(22, 18);
+        letter-spacing: 1px;
+        padding-top: 20px;
+
+        @media (max-width:$tablet) {
+            text-align: center;
+            font-size: rem(38);
+        }
+    }
+
+    // .hero-text__descr
+
+    &__descr {
+        margin-top: 48px;
+        font-size: rem(18);
+        color: $GrayishBlue;
+        letter-spacing: 1px;
+        line-height: math.div(24, 18);
+        font-weight: 300;
+
+        @media (max-width:$tablet) {
+            margin-top: 20px;
+        }
+    }
+
+    // .hero-text__btn
+
+    &__btn {
+        height: 100%;
+        margin-top: 48px;
+
+        @media (max-width:$tablet) {
+            margin: 0 auto;
+            margin-top: 20px;
+            margin-bottom: 40px;
+        }
+    }
+}
+
+.btn-primary {
+    background-image: linear-gradient(to right, $Green, $Cyan);
+    border: none;
+    color: $White;
+    border-radius: 48px;
+    padding: 18px 48px;
+    font-weight: 700;
+    cursor: pointer;
+}
