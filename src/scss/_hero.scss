@@ -32,6 +32,7 @@
         position: relative;
 
         @media (max-width:$tablet) {
+            z-index: 0;
             transform: translate(0, -10px);
             display: block;
             width: 80%;
